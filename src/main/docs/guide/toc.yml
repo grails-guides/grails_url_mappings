@@ -2,7 +2,15 @@ gettingStarted:
   title: Getting Started
   requirements: What you will need
   howto: How to complete the guide
-writingTheApp:
-  title: Writing the Application
-runningTheApp:
-  title: Running the Application
+creatingTheApp:
+  title: Creating our Application
+controllers:
+  title: Creating Controllers
+urlMappings:
+  title: Defining URL Mappings
+splitUrlMappings:
+  title: Organize URL Mappings
+testing:
+  title: Testing URL Mappings
+conclusion:
+  title: Conclusion

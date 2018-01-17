@@ -1,0 +1,2 @@
+* [ ] Create new controllers  - `Talk`, `Speaker`, `Agenda`, and `Conference`
+* [ ] Stub out controller actions: CRUD for domains, `agenda`, `talk`, `speaker` for `ConferenceController`

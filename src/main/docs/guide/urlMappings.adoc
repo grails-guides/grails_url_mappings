@@ -1,0 +1,3 @@
+* [ ] Use default CRUD mappings for domain controllers
+* [ ] Create `agenda`, `talk`, `speaker` mappings for `ConferenceController`
+* [ ] Specific HTTP methods for mappings

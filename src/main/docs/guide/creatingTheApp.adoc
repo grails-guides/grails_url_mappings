@@ -1,0 +1,3 @@
+* [ ] Create new application via Grails CLI
+* [ ] Create new application via Application Forge
+* [ ] Use `initial` project from the Guide repo

@@ -1,2 +1,25 @@
-* [ ] Create new controllers  - `Talk`, `Speaker`, `Agenda`, and `Conference`
+Before we can define our URL mappings, we need to create some *controllers*. We'll learn more about controllers in the next guide, but for now you can think of them as the "web layer" of our application. Controllers respond to requests (i.e., from a user's browser, or from a another microservice), obtain data from the model, and return a response, such as an HTML page or a JSON string.
+
+You can create a controller by simply creating a Groovy class under the `grails-app/controllers` directory. However, Grails provides a handy command for creating controllers on the command-line.
+
+Because we're going to create several controllers, let's use the *interactive mode* provided by the Grails CLI. Run the following command from within your project directory:
+
+[source,bash]
+----
+~ ./grailsw
+...
+
+grails >
+----
+
+Once the interactive CLI is loaded up, you can run any available Grails commands, including `create-controller`. Run the following commands:
+
+[source,bash]
+----
+grails > create-controller demo.Talk
+grails > create-controller demo.Speaker
+grails > create-controller demo.Agenda
+grails > create-controller demo.Conference
+----
+
 * [ ] Stub out controller actions: CRUD for domains, `agenda`, `talk`, `speaker` for `ConferenceController`

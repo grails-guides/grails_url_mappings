@@ -1,4 +1,4 @@
-package grails_101_day_two_url_mappings
+package demo
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

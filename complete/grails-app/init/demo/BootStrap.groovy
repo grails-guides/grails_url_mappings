@@ -1,4 +1,4 @@
-package grails_101_day_two_url_mappings
+package demo
 
 class BootStrap {
 

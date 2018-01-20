@@ -2,7 +2,7 @@
 grails:
     profile: web
     codegen:
-        defaultPackage: grails_101_day_two_url_mappings
+        defaultPackage: demo
     spring:
         transactionManagement:
             proxies: false

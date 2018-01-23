@@ -70,7 +70,9 @@ include::{sourceDir}/grails-app/controllers/demo/SpeakerController.groovy[]
 include::{sourceDir}/grails-app/controllers/demo/AgendaController.groovy[]
 ----
 
-For the `ConferenceController`, we'll create a different set of actions - `talks`, `speakers`, and `agenda`. Edit `ConferenceController.groovy` as shown below:
+For the `ConferenceController`, we'll create a different set of actions - `talks`, `speakers`, and `agenda`. In addition, the `talks` and `speakers` actions will accept an optional `id` parameter, so that we can display a specific speaker or talk.
+
+Edit `ConferenceController.groovy` as shown below:
 
 
 [source,groovy]

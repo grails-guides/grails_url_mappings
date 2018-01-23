@@ -2,15 +2,24 @@ package demo
 
 class ConferenceController {
 
-    def talks() {
-        render "Returning talks..."
+    def talks(Long id) {
+        if(id) {
+            render "Returning conference talk ${id}..."
+        } else {
+            render "Returning conference talks..."
+        }
+
     }
 
-    def speakers() {
-        render "Returning speakers..."
+    def speakers(Long id) {
+        if(id) {
+            render "Returning conference speaker ${id}..."
+        } else {
+            render "Returning conference speakers..."
+        }
     }
 
     def agenda() {
-        render "Returning agenda..."
+        render "Returning conference agenda..."
     }
 }

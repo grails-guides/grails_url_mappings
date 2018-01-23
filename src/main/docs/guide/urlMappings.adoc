@@ -24,9 +24,9 @@ The very first mapping in the `mappings` block is pretty straightforward. It has
 
 TIP: See how to use URL constraints http://docs.grails.org/latest/guide/theWebLayer.html#applyingConstraints[here in the Grails documentation].
 
-The URL pattern can include wildcards, which are denoted by Groovy Strings within the pattern (e.g., `$controller` or `${controller}`. Grails has a few special wildcards which it supports out of the box. For example, `$controller` will be mapped to the name of a given controller, `$action` will be mapped to an action within that controller, and so forth. Optional parameters are suffixed with a `?`. E.g., `/controller/$action?`
+The URL pattern can include variables, which are denoted by Groovy Strings within the pattern (e.g., `$controller` or `${controller}`. Grails has a few special wildcards which it supports out of the box. For example, `$controller` will be mapped to the name of a given controller, `$action` will be mapped to an action within that controller, and so forth. Optional variables are suffixed with a `?`. E.g., `/controller/$action?`
 
-Using the wildcards for all the parts of the URL pattern means this particular mapping will match *any* URL. See the table below:
+Using the variables for all the parts of the URL pattern means this particular mapping will match *any* URL. See the table below:
 
 
 .URL Mapping Resolution
@@ -81,9 +81,11 @@ class UrlMappings {
         }
 
 
-        "/talks"(controller: 'conference', action: 'talks') //<1>
-        "/speakers"(controller: 'conference', action: 'speakers')
-        "/agenda"(controller: 'conference', action: 'agenda')
+        "/talks/$id?"(controller: 'conference', action: 'talks') //<1>
+
+        "/speakers/$id?"(controller: 'conference', action: 'speakers')
+
+        "/agenda"(controller: 'conference', action: 'agenda') //<2>
 
 
         "/"(view:"/index")
@@ -92,13 +94,21 @@ class UrlMappings {
     }
 }
 ----
-<1> We are mapping a custom URL pattern `/talks` to our `ConferenceController` actions. Note that we're not using wildcards in these patterns, so the request must match the URL pattern exactly. Otherwise, it will be handled by the default URL mapping at the top of the file.
+<1> We are mapping a custom URL pattern `/talks/$id?` to our `ConferenceController` actions. The `$id` variable means that this component of the URL pattern will be mapped to the `id` parameter of the `talks` action. The suffix of `?` makes this variable optional.
+<2> Note that we're not using any variables in this patterns, so the request must match the URL pattern exactly. Otherwise, it will be handled by the default URL mapping at the top of the file.
 
 If you start up the application now and make a request to `http://localhost:8080/talks`, you should see this text rendered to the browser:
 
 ```
-    Returning talks...
+    Returning conference talks...
 ```
+
+Try another URL: `http://localhost:8080/talks/1`:
+
+```
+    Returning conference talk 1...
+```
+
 
 === HTTP Methods
 
@@ -121,8 +131,8 @@ class UrlMappings {
             }
         }
 
-        get "/talks"(controller: 'conference', action: 'talks')
-        get "/speakers"(controller: 'conference', action: 'speakers')
+        get "/talks/$id?"(controller: 'conference', action: 'talks')
+        get "/speakers/$id?"(controller: 'conference', action: 'speakers')
         get "/agenda"(controller: 'conference', action: 'agenda')
 
 

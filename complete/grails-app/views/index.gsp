@@ -60,6 +60,8 @@
                 this application, click on each to execute its default action:
             </p>
 
+            <h3><g:link controller="conference" action="talks">Conference Talks</g:link></h3>
+
             <div id="controllers" role="navigation">
                 <h2>Available Controllers:</h2>
                 <ul>

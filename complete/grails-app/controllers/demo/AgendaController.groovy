@@ -10,15 +10,15 @@ class AgendaController {
         render "Saving new Agenda..."
     }
 
-    def show(Serializable id) {
+    def show(Long id) {
         render "Retrieving Agenda ${id}..."
     }
 
-    def update(Serializable id) {
+    def update(Long id) {
         render "Updating Agenda ${id}..."
     }
 
-    def delete(Serializable id) {
+    def delete(Long id) {
         render "Deleting Agenda ${id}..."
     }
 }

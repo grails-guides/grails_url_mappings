@@ -110,5 +110,32 @@ Let's update our `UrlMappings.groovy` file one more time, to specify that we onl
 [source,groovy]
 .grails-app/controllers/demo/UrlMappings.groovy
 ----
-include::{sourceDir}/grails-app/controllers/demo/UrlMappings.groovy[]
+package demo
+
+class UrlMappings {
+
+    static mappings = {
+        "/$controller/$action?/$id?(.$format)?"{
+            constraints {
+                // apply constraints here
+            }
+        }
+
+        get "/talks"(controller: 'conference', action: 'talks')
+        get "/speakers"(controller: 'conference', action: 'speakers')
+        get "/agenda"(controller: 'conference', action: 'agenda')
+
+
+        "/"(view:"/index")
+        "500"(view:'/error')
+        "404"(view:'/notFound')
+    }
+}
+----
+
+If you now use `curl` (or another HTTP client) to make a non-GET request to one of these URLs, you'll receive a 404 page. Try it with the below `curl` command:
+
+[source,bash]
+----
+~ curl -X PUT localhost:8080/talks
 ----

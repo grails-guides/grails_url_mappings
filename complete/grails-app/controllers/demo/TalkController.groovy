@@ -10,15 +10,15 @@ class TalkController {
         render "Saving new Talk..."
     }
 
-    def show(Serializable id) {
+    def show(Long id) {
         render "Retrieving Talk ${id}..."
     }
 
-    def update(Serializable id) {
+    def update(Long id) {
         render "Updating Talk ${id}..."
     }
 
-    def delete(Serializable id) {
+    def delete(Long id) {
         render "Deleting Talk ${id}..."
     }
 }

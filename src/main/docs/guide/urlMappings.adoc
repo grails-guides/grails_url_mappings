@@ -44,11 +44,18 @@ Using the variables for all the parts of the URL pattern means this particular m
 
 |===
 
-In addition to mapping to controller actions, URL mappings can also map directly to a view, or an arbitrary URI (useful for redirects). For example, the default URL mapping for the root context, `/`, points to the default `index.gsp` page under `grails-app/views`:
+In addition to mapping to controller actions, URL mappings can also map directly to a view (without specifying a controller or action), or an arbitrary URI (useful for redirects). For example, the default URL mapping for the root context, `/`, points to the default `index.gsp` page under `grails-app/views`:
 
-[source.groovy]
+[source,groovy]
 ----
     "/"(view:"/index")
+----
+
+You can use the `uri` argument to map to a different URI:
+
+[source,groovy]
+----
+    "/hello"(uri: "/hello.dispatch")
 ----
 
 Another useful kind of mapping are HTTP error code mappings, also seen in the default `UrlMappings.groovy` file. The default mappings simply load a default error view, however you could easily redirect these requests to an error-handling or logging controller to apply custom error handling logic and recovery in your app. E.g.,

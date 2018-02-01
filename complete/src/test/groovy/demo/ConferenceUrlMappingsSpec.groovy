@@ -12,13 +12,13 @@ class ConferenceUrlMappingsSpec extends Specification implements UrlMappingsUnit
     void "test conference mappings"() {
 
         expect: "calls to /conference/talks to succeed"
-        verifyUrlMapping("/conf/talks", controller: 'conference', action: 'talks')  //<3>
-        verifyUrlMapping("/conf/talks/1", controller: 'conference', action: 'talks') {
+        verifyUrlMapping("/conf/talks", controller: 'conference', action: 'talks', method: 'GET')  //<3>
+        verifyUrlMapping("/conf/talks/1", controller: 'conference', action: 'talks', method: 'GET') {
             id = '1'
         }
 
         when: "calling /conf/speakers"
-        assertUrlMapping("/conf/speakers", controller: 'conference', action: 'speakers') //<4>
+        assertUrlMapping("/conf/speakers", controller: 'conference', action: 'speakers', method: 'GET') //<4>
 
         then: "no exception is thrown"
         noExceptionThrown()

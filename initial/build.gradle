@@ -58,7 +58,7 @@ dependencies {
 
 bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
-    addResources = true
+    sourceResources sourceSets.main
 }
 tasks.withType(Test) {
     systemProperty "geb.env", System.getProperty('geb.env')

@@ -54,12 +54,11 @@ dependencies {
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.14.6"
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.grails:grails-web-testing-support"
-
 }
 
 bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
-    addResources = true
+    sourceResources sourceSets.main
 }
 
 tasks.withType(Test) {

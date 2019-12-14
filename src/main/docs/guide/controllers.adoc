@@ -1,4 +1,4 @@
-Before we can define our URL mappings, we need to create some *controllers*. We'll learn more about controllers in the next guide, but for now you can think of them as the "web layer" of our application. Controllers respond to requests (i.e., from a user's browser, or from a another microservice), obtain data from the model, and return a response, such as an HTML page or a JSON string.
+Before we can define our URL mappings, we need to create some *controllers*. You can think of them as the "web layer" of our application. Controllers respond to requests (i.e., from a user's browser, or from a another microservice), obtain data from the model, and return a response, such as an HTML page or a JSON string.
 
 You can create a controller by simply creating a Groovy class under the `grails-app/controllers` directory. However, Grails provides a handy command for creating controllers on the command-line.
 

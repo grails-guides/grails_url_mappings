@@ -1,5 +1,3 @@
-NOTE: If you've already followed along with Day 1's Guide, "Installing and Running Grails", you can use the project you've already created during that tutorial, and skip this section. If you're starting out with this guide, or you just prefer a clean start, just keep reading.
-
 Please choose from the following options to create your project:
 
 === 1. Create a new Application via the Grails CLI

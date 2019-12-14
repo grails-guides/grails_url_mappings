@@ -60,11 +60,6 @@ bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
     sourceResources sourceSets.main
 }
-tasks.withType(Test) {
-    systemProperty "geb.env", System.getProperty('geb.env')
-    systemProperty "webdriver.chrome.driver", System.getProperty('webdriver.chrome.driver')
-    systemProperty "webdriver.gecko.driver", System.getProperty('webdriver.gecko.driver')
-}
 
 assets {
     minifyJs = true

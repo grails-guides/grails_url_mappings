@@ -69,7 +69,7 @@ Another useful kind of mapping are HTTP error code mappings, also seen in the de
 
 The default URL mappings will cover most of our needs in this sample app. However, to give us finer grained control, we are going to add a few of our own mappings for the `ConferenceController` actions we stubbed out above.
 
-WARN: The default set of URL mappings cover many use cases. However, when it's time to secure your application, you may want to remove the default mapping and replace it with more specific mappings (so that users cannot access any controller action they like simply by figuring out the names).
+WARNING: The default set of URL mappings cover many use cases. However, when it's time to secure your application, you may want to remove the default mapping and replace it with more specific mappings (so that users cannot access any controller action they like simply by figuring out the names).
 
 Edit the `UrlMappings.groovy` file as shown below:
 

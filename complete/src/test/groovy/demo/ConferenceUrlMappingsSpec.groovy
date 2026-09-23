@@ -22,7 +22,5 @@ class ConferenceUrlMappingsSpec extends Specification implements UrlMappingsUnit
 
         then: "no exception is thrown"
         noExceptionThrown()
-
     }
-
 }
